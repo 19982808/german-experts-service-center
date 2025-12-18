@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>German Experts Service Center Kenya</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="BMW, Audi, Mercedes & Volkswagen specialists in Nairobi, Kiambu Road & Karen.">
+
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+/* Basic styles for layout and components */
+body { font-family: 'Poppins', sans-serif; margin:0; padding:0; scroll-behavior: smooth; }
+header { display:flex; align-items:center; justify-content:space-between; padding:10px 20px; background:#111; color:#fff; position:sticky; top:0; z-index:100; }
+header {
+  background: #ffffff;
+  color: #111;
+}
+
+header nav a:hover {
+  color: #007bff;
+}
+header .logo {
+  height: 120px;     
+  width: 400px;       
+  
+}h2 { text-align:center; margin-bottom:40px; }
+.hero { position:relative; overflow:hidden; height:80vh; display:flex; align-items:center; justify-content:center; color:#fff; text-align:center; }
+.hero .slides .slide { position:absolute; top:0; left:0; width:100%; height:100%; background-size:cover; background-position:center; opacity:0; transition:opacity 0.5s ease; }
+.hero .slides .slide.active { opacity:1; }
+.hero-content { position:relative; z-index:2; }
+.hero button { position:absolute; top:50%; transform:translateY(-50%); background:rgba(0,0,0,0.5); color:#fff; border:none; font-size:2rem; padding:10px; cursor:pointer; }
+.hero .prev { left:20px; } .hero .next { right:20px; }
+.dots { position:absolute; bottom:20px; width:100%; text-align:center; }
+.dot { display:inline-block; width:12px; height:12px; margin:0 5px; background:#fff; border-radius:50%; opacity:0.5; cursor:pointer; }
+.dot.active { opacity:1; }
+.service-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px; }
+.service-card { padding:20px; background:#f9f9f9; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.1); }
+#bookingForm { display:flex; flex-direction:column; max-width:400px; margin:0 auto; gap:10px; }
+#bookingForm input, #bookingForm select, #bookingForm textarea, #bookingForm button { padding:10px; font-size:1rem; width:100%; }
+.popup { display:none; position:fixed; top:20%; left:50%; transform:translateX(-50%); background:#111; color:#fff; padding:20px 40px; border-radius:8px; z-index:200; }
+.review { display:none; text-align:center; font-size:1.2rem; margin-bottom:20px; }
+.review.active { display:block; }
+.gallery-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:10px; }
+.gallery-item img, .gallery-item video { width:100%; border-radius:8px; }
+.payment-container { display:flex; flex-wrap:wrap; gap:20px; justify-content:center; }
+.payment-card { padding:20px; background:#f5f5f5; border-radius:8px; text-align:center; max-width:250px; box-shadow:0 2px 6px rgba(0,0,0,0.1); }
+.payment-card button { margin:5px 0; padding:8px 12px; cursor:pointer; }
+.whatsapp-btn { display:block; text-align:center; background:#25D366; color:#fff; padding:10px 20px; margin:20px auto; width:fit-content; border-radius:8px; text-decoration:none; }
+#chatbot-container { display:none; position:fixed; bottom:70px; right:20px; width:300px; background:#fff; border:1px solid #ccc; border-radius:8px; z-index:500; box-shadow:0 4px 12px rgba(0,0,0,0.2); }
+#chatbot-header { background:#111; color:#fff; padding:10px; font-weight:600; display:flex; justify-content:space-between; align-items:center; }
+#chatbot-messages { max-height:300px; overflow-y:auto; padding:10px; }
+.user-message { text-align:right; margin:5px 0; background:#25D366; color:#fff; padding:5px 10px; border-radius:10px; }
+.bot-message { text-align:left; margin:5px 0; background:#eee; padding:5px 10px; border-radius:10px; }
+#chatbot-input-area { display:flex; }
+#chatbot-input { flex:1; padding:8px; }
+#chatbot-send { padding:8px; }
+#chatbot-toggle { position:fixed; bottom:20px; right:20px; background:#25D366; color:#fff; padding:12px; border-radius:50%; font-size:1.5rem; cursor:pointer; z-index:500; }
+#chatbot-options { display:flex; justify-content:space-around; padding:10px; border-top:1px solid #ccc; }
+#chatbot-options button { flex:1; margin:0 2px; padding:8px; font-size:0.9rem; cursor:pointer; background:#f1f1f1; border:none; border-radius:5px; }
+.social-icons img { width:30px; margin:0 5px; }
+</style>
+</head>
+<body>
+
+<header>
+<img src="images/logo.png" class="logo" alt="German Experts Center Logo">
+<nav>
+<a href="#about">About Us</a>
+<a href="#services">Services</a>
+<a href="#booking">Booking</a>
+<a href="#locations">Locations</a>
+<a href="#reviews">Reviews</a>
+<a href="#gallery">Gallery</a>
+<a href="#contact">Contact</a>
+<a href="#payments">Payments</a>
+<a href="about.html">Company Profile</a>
+</nav>
+</header>
+
+<!-- HERO SECTION -->
+<section class="hero">
+<div class="slides">
+  <div class="slide active" style="background-image:url('images/hero1.png')"></div>
+  <div class="slide" style="background-image:url('images/hero2.png')"></div>
+  <div class="slide" style="background-image:url('images/hero3.png')"></div>
+  <div class="slide" style="background-image:url('images/hero4.png')"></div>
+  <div class="slide" style="background-image:url('images/hero5.png')"></div>
+  <div class="slide" style="background-image:url('images/hero6.png')"></div>
+  <div class="slide" style="background-image:url('images/hero7.png')"></div>
+  <div class="slide" style="background-image:url('images/hero8.png')"></div>
+  <div class="slide" style="background-image:url('images/hero9.png')"></div>
+  <div class="slide" style="background-image:url('images/hero10.png')"></div>
+<div class="slide" style="background-image:url('images/hero11.png')"></div>
+<div class="slide" style="background-image:url('images/hero12.png')"></div>
+
+</div>
+<div class="hero-content">
+<h1>German Precision Automotive Service</h1>
+<p>BMW • Audi • Mercedes • Volkswagen</p>
+</div>
+<button class="prev">&#10094;</button>
+<button class="next">&#10095;</button>
+<div class="dots">
+  <span class="dot active" data-index="0"></span>
+  <span class="dot" data-index="1"></span>
+  <span class="dot" data-index="2"></span>
+  <span class="dot" data-index="3"></span>
+  <span class="dot" data-index="4"></span>
+  <span class="dot" data-index="5"></span>
+  <span class="dot" data-index="6"></span>
+  <span class="dot" data-index="7"></span>
+  <span class="dot" data-index="8"></span>
+  <span class="dot" data-index="9"></span>
+</div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+<h2>About Us</h2>
+<p>WELCOME TO GERMAN EXPERTS SERVICE CENTER </p>
+<p>At German Experts Service Center, we are the market leaders in German car repairs and maintenance in Nairobi, Kenya. Our team consists of professionally accredited technicians specializing in Audi, BMW, Volkswagen, Mercedes-Benz, Porsche, and Range Rover. We utilize modern diagnostic equipment and advanced repair technology to ensure precision and efficiency in every service. From routine maintenance to complex engine overhauls, we deliver exceptional results that keep your vehicle performing at its best. Customer satisfaction is our priority, and we uphold the highest standards of service, quality, and professionalism. Whether it’s engine diagnostics, brake repairs, suspension work, or general servicing, you can trust us to handle your German car with expertise. Choose German Experts Service Center for reliable, top-tier automotive solutions. Your car deserves the best—experience excellence with us today!</p>
+<a href="files/profile.pdf" download class="download-btn">Download Our Profile</a>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+<h2>Our Services</h2>
+<div class="service-grid">
+<div class="service-card"><h3>Minor & Major Engine Service</h3><p>Comprehensive engine servicing...</p></div>
+<div class="service-card"><h3>Diagnosis & Programming</h3><p>Advanced computer diagnostics...</p></div>
+<div class="service-card"><h3>Transmission Services</h3><p>Professional inspection...</p></div>
+<div class="service-card"><h3>Suspension Services</h3><p>Complete suspension diagnostics...</p></div>
+<div class="service-card"><h3>Body Works & Paint</h3><p>High-quality body repairs...</p></div>
+<div class="service-card"><h3>Car Pre-Purchase Inspection</h3><p>Detailed vehicle inspections...</p></div>
+<div class="service-card"><h3>Online Coding & Software Upgrades</h3><p>Vehicle software updates...</p></div>
+<div class="service-card"><h3>Key Duplication</h3><p>Secure and reliable duplication...</p></div>
+<div class="service-card"><h3>Interior Works</h3><p>Interior repairs, restoration...</p></div>
+</div>
+</section>
+
+<!-- BOOKING -->
+<section id="booking">
+<h2>Book an Appointment</h2>
+<form id="bookingForm">
+<input type="text" id="name" placeholder="Your Name" required>
+<input type="tel" id="phone" placeholder="Phone Number" required>
+<select id="service" required>
+<option value="">Select Service</option>
+<option>Minor & Major Engine Service</option>
+<option>Diagnosis & Programming</option>
+<option>Transmission Services</option>
+<option>Suspension Services</option>
+<option>Body Works & Paint</option>
+<option>Car Pre-Purchase Inspection</option>
+<option>Online Coding & Software Upgrades</option>
+<option>Key Duplication</option>
+<option>Interior Works</option>
+</select>
+<textarea id="message" placeholder="Message"></textarea>
+<button type="submit">Submit Booking</button>
+</form>
+<div id="confirmationPopup" class="popup">Redirecting to WhatsApp...</div>
+</section>
+
+<!-- LOCATIONS -->
+<section id="locations">
+<h2>Our Locations</h2>
+<h3>Ngong Road</h3>
+<iframe src="https://www.google.com/maps?q=German%20Experts%20Center%20Nairobi&output=embed"></iframe>
+<h3>Kiambu By-pass Branch</h3>
+<iframe src="https://www.google.com/maps?q=German%20Experts%20Center%20Kiambu%20Road&output=embed"></iframe>
+<h3>Karen Branch</h3>
+<iframe src="https://www.google.com/maps?q=German%20Experts%20Center%20Karen&output=embed"></iframe>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews">
+<h2>Customer Reviews</h2>
+<div class="review active">⭐⭐⭐⭐⭐ <p>Excellent diagnostics and honest service.</p><strong>— BMW Owner</strong></div>
+<div class="review">⭐⭐⭐⭐⭐ <p>Professional team, fixed my Audi perfectly.</p><strong>— Audi Owner</strong></div>
+<div class="review">⭐⭐⭐⭐⭐ <p>The only garage I trust with my Mercedes.</p><strong>— Mercedes Owner</strong></div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+  <h2>Garage Gallery</h2>
+
+  <div class="gallery-grid">
+    <!-- Videos first -->
+    <div class="gallery-item">
+      <video controls>
+        <source src="files/video1.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+
+    <div class="gallery-item">
+      <video controls>
+        <source src="files/video2.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+
+    <!-- Images (13 total) -->
+    <div class="gallery-item"><img src="images/gallery1.jpg" alt="German Experts Center Workshop"></div>
+    <div class="gallery-item"><img src="images/gallery2.jpg" alt="BMW Diagnostics Bay"></div>
+    <div class="gallery-item"><img src="images/gallery3.jpg" alt="Audi Engine Repair"></div>
+    <div class="gallery-item"><img src="images/gallery4.jpg" alt="Mercedes Servicing Area"></div>
+    <div class="gallery-item"><img src="images/gallery5.jpg" alt="Volkswagen Repair Bay"></div>
+    <div class="gallery-item"><img src="images/gallery6.jpg" alt="Body Works and Paint Section"></div>
+    <div class="gallery-item"><img src="images/gallery7.jpg" alt="Engine Diagnostics"></div>
+    <div class="gallery-item"><img src="images/gallery8.jpg" alt="Workshop Tools"></div>
+    <div class="gallery-item"><img src="images/gallery9.jpg" alt="Car Lift Area"></div>
+    <div class="gallery-item"><img src="images/gallery10.jpg" alt="Paint Booth"></div>
+    <div class="gallery-item"><img src="images/gallery11.jpg" alt="Customer Waiting Area"></div>
+    <div class="gallery-item"><img src="images/gallery12.jpg" alt="Mechanic at Work"></div>
+    <div class="gallery-item"><img src="images/gallery13.jpg" alt="Service Reception"></div>
+    <div class="gallery-item"><img src="images/gallery14.jpg" alt="Service Offered"></div>
+<div class="gallery-item"><img src="images/gallery15.jpg" alt="Service Offered"></div>
+<div class="gallery-item"><img src="images/gallery16.jpg" alt="Service Offered"></div>
+<div class="gallery-item"><img src="images/gallery17.jpg" alt="Service Offered"></div>
+<div class="gallery-item"><img src="images/gallery18.jpg" alt="Service Offered"></div>
+<div class="gallery-item"><img src="images/gallery19.jpg" alt="Service Offered"></div>
+<div class="gallery-item"><img src="images/gallery20.jpg" alt="Service Offered"></div>
+<div class="gallery-item"><img src="images/gallery21.jpg" alt="Service Offered"></div>
+
+
+
+  </div>
+</section>
+<!-- CONTACT SECTION -->
+<section id="contact" class="contact">
+  <h2>Contact Us</h2>
+
+  <div class="contact-info">
+    <p><strong>📍 Branches:</strong> Ngong road, Kiambu By-pass & Karen</p>
+    <p><strong>📞 Phone:</strong>
+      <a href="tel:+254704222666">0704 222 666</a> /
+      <a href="tel:+254798690204">0798 690 204</a> /
+      <a href="tel:+254704831822">0704 831 822</a>
+    </p>
+    <p><strong>✉ Email:</strong>
+      <a href="mailto:germanexpertscenter@gmail.com">germanexpertscenter@gmail.com</a>
+    </p>
+  </div>
+
+  <div class="contact-buttons">
+    <a href="https://wa.me/254704222666" target="_blank" class="btn-secondary">💬 WhatsApp Primary</a>
+    <a href="https://wa.me/254798690204/254704831822" target="_blank" class="btn-secondary">💬 WhatsApp Secondary</a>
+  </div>
+
+<div class="social-icons">
+  <a href="https://www.facebook.com/GermanXpertsKe1" target="_blank"><img src="images/facebook.svg" alt="Facebook" /></a>
+  <a href="https://www.instagram.com/GermanXpertsKe1" target="_blank"><img src="images/instagram.png" alt="Instagram" /></a>
+  <a href="https://x.com/GermanXpertsKe1" target="_blank"><img src="images/twitter.png" alt="Twitter/X" /></a>
+</div>
+</section>
+
+<!-- PAYMENT METHODS -->
+<section id="payments" class="payments">
+  <h2>Payment Methods</h2>
+  <p class="pay-note">Complete payment using any method below and confirm via WhatsApp.</p>
+
+  <div class="payment-container">
+    <!-- M-Pesa -->
+    <div class="payment-card">
+      <img src="images/mpesa.png" alt="M-Pesa Logo" class="payment-logo">
+      <h3>M-Pesa PayBill (Co-operative Bank)</h3>
+      <p><strong>Business Number:</strong> <span id="mpesaBiz">400200</span></p>
+      <p><strong>Account Number:</strong> <span id="mpesaAcc">1117343</span></p>
+      <p><strong>Account Name:</strong> GERMAN EXPERTS</p>
+      <button onclick="copyText('400200')">Copy Business Number</button>
+      <button onclick="copyText('1117343')">Copy Account Number</button>
+    </div>
+
+    <!-- SasaPay -->
+    <div class="payment-card">
+      <img src="images/sasapay.png" alt="SasaPay Logo" class="payment-logo">
+      <h3>SasaPay</h3>
+      <p><strong>Business Number:</strong> <span id="sasaBiz">756756</span></p>
+      <p><strong>Account Number:</strong> <span id="sasaAcc">469004</span></p>
+      <p><strong>Account Name:</strong> GERMAN EXPERTS</p>
+      <button onclick="copyText('756756')">Copy Business Number</button>
+      <button onclick="copyText('469004')">Copy Account Number</button>
+    </div>
+  </div>
+
+  <a href="https://wa.me/254704222666?text=I%20have%20completed%20my%20payment%20to%20German%20Experts" class="whatsapp-btn" target="_blank">
+    Confirm Payment on WhatsApp
+  </a>
+</section>
+
+<footer><p>© 2025 German Experts Center Kenya. All Rights Reserved.</p></footer>
+
+<!-- CHATBOT -->
+<div id="chatbot-container">
+  <div id="chatbot-header">
+    💬 Need Help? <span id="chatbot-close">✖</span>
+  </div>
+
+  <div id="chatbot-messages">
+    <div class="bot-message">
+      Hello! I’m your assistant. How can I help you today?
+    </div>
+  </div>
+
+  <div id="chatbot-input-area">
+    <input type="text" id="chatbot-input" placeholder="Type your message or choose below...">
+    <button id="chatbot-send">Send</button>
+  </div>
+
+  <div id="chatbot-options">
+    <button data-option="services">Services</button>
+    <button data-option="booking">Book Appointment</button>
+    <button data-option="locations">Locations</button>
+    <button data-option="contact">Contact</button>
+  </div>
+</div>
+
+<!-- CHATBOT TOGGLE BUTTON -->
+<div id="chatbot-toggle">💬</div>
+
+<!-- SCRIPTS -->
+<script src="script.js"></script>
+<script src="chatbot.js"></script>
+
+</body>
+</html>
