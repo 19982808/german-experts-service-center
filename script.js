@@ -11,65 +11,77 @@ window.addEventListener("load", () => {
   }
 
   /* ================= HERO SLIDER ================= */
-  window.addEventListener("load", () => {
-  const slides = document.querySelectorAll(".slide");
-  const dots = document.querySelectorAll(".dot");
-  const prev = document.querySelector(".prev");
-  const next = document.querySelector(".next");
+ (function () {
+  let slides, dots, prev, next;
+  let currentSlide = 0;
+  let autoSlide;
 
-  let current = 0;
-  let timer;
+  function initHeroSlider() {
+    slides = document.querySelectorAll(".slide");
+    dots = document.querySelectorAll(".dot");
+    prev = document.querySelector(".prev");
+    next = document.querySelector(".next");
+
+    if (!slides.length) {
+      console.error("❌ Hero slides not found");
+      return;
+    }
+
+    showSlide(currentSlide);
+    startAutoSlide();
+
+    next.addEventListener("click", () => {
+      goNext();
+      restartAutoSlide();
+    });
+
+    prev.addEventListener("click", () => {
+      goPrev();
+      restartAutoSlide();
+    });
+
+    dots.forEach(dot => {
+      dot.addEventListener("click", () => {
+        currentSlide = Number(dot.dataset.index);
+        showSlide(currentSlide);
+        restartAutoSlide();
+      });
+    });
+  }
 
   function showSlide(index) {
     slides.forEach((slide, i) => {
-      slide.classList.remove("active");
-      dots[i].classList.remove("active");
+      slide.classList.toggle("active", i === index);
+      dots[i].classList.toggle("active", i === index);
     });
-
-    slides[index].classList.add("active");
-    dots[index].classList.add("active");
   }
 
-  function nextSlide() {
-    current = (current + 1) % slides.length;
-    showSlide(current);
+  function goNext() {
+    currentSlide = (currentSlide + 1) % slides.length;
+    showSlide(currentSlide);
   }
 
-  function prevSlide() {
-    current = (current - 1 + slides.length) % slides.length;
-    showSlide(current);
+  function goPrev() {
+    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+    showSlide(currentSlide);
   }
 
-  next.addEventListener("click", () => {
-    nextSlide();
-    resetTimer();
-  });
-
-  prev.addEventListener("click", () => {
-    prevSlide();
-    resetTimer();
-  });
-
-  dots.forEach(dot => {
-    dot.addEventListener("click", () => {
-      current = parseInt(dot.dataset.index);
-      showSlide(current);
-      resetTimer();
-    });
-  });
-
-  function startTimer() {
-    timer = setInterval(nextSlide, 5000);
+  function startAutoSlide() {
+    autoSlide = setInterval(goNext, 4000);
   }
 
-  function resetTimer() {
-    clearInterval(timer);
-    startTimer();
+  function restartAutoSlide() {
+    clearInterval(autoSlide);
+    startAutoSlide();
   }
 
-  showSlide(current);
-  startTimer();
-});
+  /* GUARANTEED DOM READY */
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initHeroSlider);
+  } else {
+    initHeroSlider();
+  }
+})();
 
   /* ================= BOOKING FORM ================= */
   const bookingForm = document.getElementById("bookingForm");
@@ -133,4 +145,5 @@ window.addEventListener("load", () => {
   });
 
 });
+
 
