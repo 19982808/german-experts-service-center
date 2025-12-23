@@ -76,3 +76,15 @@ function botReply(message) {
 
   appendMessage(reply, "bot");
 }
+// TOGGLE CHATBOT
+chatbotToggle.addEventListener("click", () => {
+  if (chatbotContainer.style.display === "flex") {
+    chatbotContainer.style.display = "none";
+  } else {
+    chatbotContainer.style.display = "flex";
+  }
+});
+
+chatbotClose.addEventListener("click", () => {
+  chatbotContainer.style.display = "none";
+});
