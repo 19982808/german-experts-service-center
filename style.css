@@ -47,7 +47,7 @@ header {
 }
 
 header .logo {
-  height: 100px;
+  height: 300px;
   width: 400px;
 }
 
@@ -240,3 +240,4 @@ header nav a:hover {
     grid-template-columns: 1fr;
   }
 }
+
