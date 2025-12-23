@@ -409,144 +409,108 @@ footer {
     grid-template-columns: 1fr;
   }
 }
-/* CHATBOT CONTAINER */
-#chatbot-container {
-  position: fixed;
-  bottom: 80px;
-  right: 20px;
-  width: 320px;
-  max-height: 500px;
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-  display: none;
-  flex-direction: column;
-  overflow: hidden;
-  font-family: 'Poppins', sans-serif;
-  z-index: 10000;
-}
 
-/* HEADER */
-#chatbot-header {
-  background: #007bff;
-  color: #fff;
-  padding: 0.8rem 1rem;
-  font-weight: 600;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  cursor: default;
-}
-
-/* CLOSE BUTTON */
-#chatbot-close {
-  cursor: pointer;
-  font-weight: bold;
-}
-
-/* MESSAGES AREA */
-#chatbot-messages {
-  padding: 0.8rem;
-  flex: 1;
-  overflow-y: auto;
-  background: #f1f1f1;
-}
-
-#chatbot-messages .bot-message,
-#chatbot-messages .user-message {
-  margin: 0.5rem 0;
-  padding: 0.6rem 0.8rem;
-  border-radius: 10px;
-  max-width: 80%;
-  word-wrap: break-word;
-}
-
-.bot-message {
-  background: #e0e0e0;
-  align-self: flex-start;
-}
-
-.user-message {
-  background: #007bff;
-  color: #fff;
-  align-self: flex-end;
-}
-
-/* INPUT AREA */
-#chatbot-input-area {
-  display: flex;
-  border-top: 1px solid #ccc;
-}
-
-#chatbot-input-area input {
-  flex: 1;
-  padding: 0.6rem;
-  border: none;
-  outline: none;
-  font-size: 0.9rem;
-}
-
-#chatbot-input-area button {
-  background: #007bff;
-  color: #fff;
-  border: none;
-  padding: 0 1rem;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-#chatbot-input-area button:hover {
-  background: #0056b3;
-}
-
-/* QUICK OPTION BUTTONS */
-#chatbot-options {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  padding: 0.5rem;
-  border-top: 1px solid #ccc;
-  background: #fafafa;
-}
-
-#chatbot-options button {
-  margin: 0.3rem;
-  padding: 0.4rem 0.8rem;
-  border: none;
-  background: #007bff;
-  color: #fff;
-  border-radius: 5px;
-  font-size: 0.85rem;
-  cursor: pointer;
-}
-
-#chatbot-options button:hover {
-  background: #0056b3;
-}
-
-/* FLOATING ICON */
+/* Floating chatbot toggle button */
 #chatbot-toggle {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background: #25d366;
-  color: #fff;
   width: 60px;
   height: 60px;
-  font-size: 2rem;
+  background-color: #004080;
+  color: white;
   border-radius: 50%;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  font-size: 30px;
   cursor: pointer;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
   z-index: 9999;
-  transition: transform 0.3s;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+  pointer-events: auto;
+  transition: transform 0.2s;
 }
 
 #chatbot-toggle:hover {
   transform: scale(1.1);
 }
+
+/* Chatbot container */
+#chatbot-container {
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  width: 300px;
+  max-height: 400px;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  display: none; /* Hidden by default */
+  flex-direction: column;
+  z-index: 9998;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+}
+
+/* Header */
+#chatbot-header {
+  background-color: #004080;
+  color: white;
+  padding: 10px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Close button */
+#chatbot-close {
+  cursor: pointer;
+}
+
+/* Messages area */
+#chatbot-messages {
+  flex: 1;
+  padding: 10px;
+  overflow-y: auto;
+}
+
+/* Input area */
+#chatbot-input-area {
+  display: flex;
+  border-top: 1px solid #ccc;
+}
+
+#chatbot-input {
+  flex: 1;
+  padding: 8px;
+  border: none;
+}
+
+#chatbot-send {
+  padding: 8px 12px;
+  background-color: #004080;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+#chatbot-options button {
+  margin: 5px;
+  padding: 5px 10px;
+  background-color: #e0e0e0;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+#chatbot-options button:hover {
+  background-color: #004080;
+  color: white;
+}
+
+
 
 /* PDF container for About Us page */
 .pdf-container {
@@ -582,6 +546,7 @@ footer {
 .download-btn a:hover {
   background-color: #0066cc;
 }
+
 
 
 
