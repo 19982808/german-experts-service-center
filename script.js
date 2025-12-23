@@ -11,56 +11,65 @@ window.addEventListener("load", () => {
   }
 
   /* ================= HERO SLIDER ================= */
+  window.addEventListener("load", () => {
   const slides = document.querySelectorAll(".slide");
-  const prevBtn = document.querySelector(".hero button.prev");
-  const nextBtn = document.querySelector(".hero button.next");
   const dots = document.querySelectorAll(".dot");
-  let currentSlide = 0;
-  let slideInterval;
+  const prev = document.querySelector(".prev");
+  const next = document.querySelector(".next");
 
-  function showSlide(index){
+  let current = 0;
+  let timer;
+
+  function showSlide(index) {
     slides.forEach((slide, i) => {
       slide.classList.remove("active");
       dots[i].classList.remove("active");
     });
+
     slides[index].classList.add("active");
     dots[index].classList.add("active");
   }
 
-  function nextSlide(){
-    currentSlide = (currentSlide + 1) % slides.length;
-    showSlide(currentSlide);
+  function nextSlide() {
+    current = (current + 1) % slides.length;
+    showSlide(current);
   }
 
-  function prevSlide(){
-    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-    showSlide(currentSlide);
+  function prevSlide() {
+    current = (current - 1 + slides.length) % slides.length;
+    showSlide(current);
   }
 
-  if(prevBtn && nextBtn){
-    prevBtn.addEventListener("click", () => { prevSlide(); resetInterval(); });
-    nextBtn.addEventListener("click", () => { nextSlide(); resetInterval(); });
-  }
+  next.addEventListener("click", () => {
+    nextSlide();
+    resetTimer();
+  });
+
+  prev.addEventListener("click", () => {
+    prevSlide();
+    resetTimer();
+  });
 
   dots.forEach(dot => {
     dot.addEventListener("click", () => {
-      currentSlide = parseInt(dot.getAttribute("data-index"));
-      showSlide(currentSlide);
-      resetInterval();
+      current = parseInt(dot.dataset.index);
+      showSlide(current);
+      resetTimer();
     });
   });
 
-  function startInterval(){
-    slideInterval = setInterval(nextSlide, 5000);
+  function startTimer() {
+    timer = setInterval(nextSlide, 5000);
   }
 
-  function resetInterval(){
-    clearInterval(slideInterval);
-    startInterval();
+  function resetTimer() {
+    clearInterval(timer);
+    startTimer();
   }
 
-  showSlide(currentSlide);
-  startInterval();
+  showSlide(current);
+  startTimer();
+});
 
   /* ================= BOOKING FORM ================= */
   const bookingForm = document.getElementById("bookingForm");
@@ -124,3 +133,4 @@ window.addEventListener("load", () => {
   });
 
 });
+
