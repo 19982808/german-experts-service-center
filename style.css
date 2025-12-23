@@ -47,8 +47,8 @@ header {
 }
 
 header .logo {
-  height: 80px;
-  width: auto;
+  height: 400px;
+  width: 300px;
 }
 
 header nav a {
@@ -380,3 +380,4 @@ header nav a:hover {
     font-size: 1.5rem;
   }
 }
+
