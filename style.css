@@ -548,31 +548,40 @@ footer {
   transform: scale(1.1);
 }
 
-/* Reset default margin and padding for the whole page */
-body, html {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-}
-
-/* Container for the PDF iframe */
+/* PDF container for About Us page */
 .pdf-container {
   width: 100%;
-  height: 100vh; /* Full viewport height */
+  height: 600px; /* adjust height as needed */
+  margin: 20px 0;
 }
 
-/* Style the iframe to fill the container */
 .pdf-container iframe {
   width: 100%;
   height: 100%;
-  border: none;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
 
+/* Download button styling */
+.download-btn {
+  text-align: center;
+  margin: 20px 0;
+}
 
+.download-btn a {
+  display: inline-block;
+  padding: 12px 25px;
+  background-color: #004080;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
 
-
-
-
+.download-btn a:hover {
+  background-color: #0066cc;
+}
 
 
 
