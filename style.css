@@ -93,7 +93,8 @@ header nav a:hover {
 }
 
 /* ================= HERO SECTION ================= */
-.hero {
+
+  .hero {
   position: relative;
   height: 90vh;
   overflow: hidden;
@@ -113,7 +114,8 @@ header nav a:hover {
   background-size: cover;
   background-position: center;
   opacity: 0;
-  transition: opacity 0.1s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
+  z-index: 0;
 }
 
 .slide.active {
@@ -132,44 +134,8 @@ header nav a:hover {
   z-index: 2;
 }
 
-.hero button.prev,
-.hero button.next {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 2rem;
-  background: rgba(0,0,0,0.3);
-  color: #fff;
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 50%;
-  z-index: 2;
-}
 
-.hero button.prev { left: 20px; }
-.hero button.next { right: 20px; }
 
-.dots {
-  position: absolute;
-  bottom: 15px;
-  width: 100%;
-  text-align: center;
-  z-index: 2;
-}
-
-.dot {
-  display: inline-block;
-  width: 12px;
-  height: 12px;
-  margin: 0 5px;
-  background: rgba(255,255,255,0.5);
-  border-radius: 50%;
-  cursor: pointer;
-}
-
-.dot.active {
-  background: #fff;
-}
 /* ================= ABOUT ================= */
 #about {
   padding: 4rem 3%;
@@ -644,5 +610,6 @@ footer {
     font-size: 1.5rem;
   }
 }
+
 
 
