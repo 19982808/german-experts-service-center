@@ -48,7 +48,7 @@ header {
 
 header .logo {
   height: 150px;
-  width: 300px;
+  width: 400px;
 }
 
 header nav a {
@@ -102,8 +102,8 @@ header nav a:hover {
 
 .slides {
   position: relative;
-  height: 100%;
-  width: 200%;
+  height: 300%;
+  width: 300%;
 }
 
 /* EACH SLIDE */
@@ -540,6 +540,7 @@ footer {
 #chatbot-toggle:hover {
   transform: scale(1.1);
 }
+
 
 
 
