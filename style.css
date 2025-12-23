@@ -425,10 +425,8 @@ footer {
   justify-content: center;
   font-size: 30px;
   cursor: pointer;
-  z-index: 9999;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-  pointer-events: auto;
-  transition: transform 0.2s;
+  z-index: 10000;          /* higher than iframe */
+  pointer-events: auto;     
 }
 
 #chatbot-toggle:hover {
@@ -520,11 +518,9 @@ footer {
 }
 
 .pdf-container iframe {
-  width: 100%;
-  height: 100%;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  pointer-events: none;  /* allows clicks to pass through */
 }
+
 
 /* Download button styling */
 .download-btn {
@@ -546,6 +542,7 @@ footer {
 .download-btn a:hover {
   background-color: #0066cc;
 }
+
 
 
 
