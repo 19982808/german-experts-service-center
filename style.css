@@ -91,32 +91,34 @@ header nav a:hover {
   }
 }
 
-/* ===== HERO SECTION ===== */
+/* HERO SLIDER CONTAINER */
 .hero {
   position: relative;
-  height: 90vh;
   width: 100%;
+  height: 90vh; /* full viewport height */
   overflow: hidden;
-  background: #000;
 }
 
+/* SLIDES WRAPPER */
 .slides {
   position: relative;
-  height: 90vh; /* or 100vh if you want full viewport height */
   width: 100%;
-  overflow: hidden;
+  height: 100%;
 }
-
 
 /* EACH SLIDE */
 .slide {
   position: absolute;
-  inset: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover; /* Fill the container without leaving gaps */
+  background-position: center center;
+  background-size: cover; /* fills slide, maintains aspect ratio */
   opacity: 0;
   transition: opacity 1s ease-in-out;
+  z-index: 0;
 }
 
 .slide.active {
@@ -130,10 +132,10 @@ header nav a:hover {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 2;
   text-align: center;
   color: #fff;
   text-shadow: 0 0 15px rgba(0,0,0,0.7);
+  z-index: 2;
 }
 
 /* ARROWS */
@@ -178,12 +180,15 @@ header nav a:hover {
   background: #fff;
 }
 
-/* MOBILE ADJUSTMENT */
+/* MOBILE ADJUSTMENTS */
 @media (max-width: 768px) {
   .hero {
     height: 75vh;
   }
 }
+
+
+
 
 /* ================= ABOUT ================= */
 #about {
@@ -542,6 +547,7 @@ footer {
 #chatbot-toggle:hover {
   transform: scale(1.1);
 }
+
 
 
 
