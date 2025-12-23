@@ -47,8 +47,8 @@ header {
 }
 
 header .logo {
-  height: 400px;
-  width: 300px;
+  height: 80px;
+  width: auto;
 }
 
 header nav a {
@@ -195,16 +195,47 @@ header nav a:hover {
   background: #fff;
 }
 
-/* ================= SERVICES SECTION ================= */
+/* ================= ABOUT ================= */
+#about {
+  padding: 4rem 3%;
+  background: #f1f1f1;
+  text-align: center;
+}
+
+#about h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+#about p {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.download-btn {
+  display: inline-block;
+  padding: 0.8rem 1.8rem;
+  background: #007bff;
+  color: #fff;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.download-btn:hover {
+  background: #0056b3;
+}
+
+/* ================= SERVICES ================= */
 #services {
   padding: 4rem 3%;
-  background: #f8f9fa;
+  background: #fff;
   text-align: center;
 }
 
 #services h2 {
-  margin-bottom: 2rem;
   font-size: 2.5rem;
+  margin-bottom: 2rem;
 }
 
 .service-grid {
@@ -215,83 +246,26 @@ header nav a:hover {
   margin: 0 auto;
 }
 
-.service-item {
-  background: #fff;
-  padding: 2rem 1.5rem;
+.service-card {
+  background: #f8f9fa;
+  padding: 1.5rem;
   border-radius: 10px;
-  text-align: center;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.service-item:hover {
+.service-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 15px rgba(0,0,0,0.15);
 }
 
-.service-item img {
-  width: 80px;
-  height: 80px;
-  margin-bottom: 1rem;
-  object-fit: contain;
-}
-
-.service-item h3 {
-  margin: 0.5rem 0;
+.service-card h3 {
+  margin-bottom: 0.5rem;
   font-size: 1.2rem;
-  color: #1a1a1a;
 }
 
-.service-item p {
+.service-card p {
   font-size: 1rem;
-  color: #555;
-}
-
-/* ================= SOCIAL MEDIA ICONS ================= */
-.social-icons {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 15px;
-  margin-top: 2rem;
-}
-
-.social-icons i,
-.social-icons img {
-  font-size: 1.5rem;
-  width: 40px;
-  height: 40px;
-  object-fit: contain;
-  transition: transform 0.3s, color 0.3s;
-  color: #007bff;
-}
-
-.social-icons i:hover,
-.social-icons img:hover {
-  transform: scale(1.1);
-  color: #0056b3;
-}
-
-/* ================= REVIEWS ================= */
-#reviews {
-  padding: 4rem 3%;
-  background: #fff;
-  text-align: center;
-}
-
-.review {
-  display: none;
-  max-width: 600px;
-  margin: 1rem auto;
-}
-
-.review.active {
-  display: block;
-}
-
-.review p {
-  font-size: 1.2rem;
-  margin: 0.5rem 0;
 }
 
 /* ================= BOOKING ================= */
@@ -343,8 +317,318 @@ header nav a:hover {
   z-index: 999;
 }
 
+/* ================= LOCATIONS ================= */
+#locations {
+  padding: 4rem 3%;
+  text-align: center;
+}
+
+#locations h2, #locations h3 {
+  margin-bottom: 1rem;
+}
+
+#locations iframe {
+  width: 100%;
+  height: 300px;
+  border: 0;
+  margin-bottom: 1rem;
+}
+
+/* ================= REVIEWS ================= */
+#reviews {
+  padding: 4rem 3%;
+  background: #fff;
+  text-align: center;
+}
+
+.review {
+  display: none;
+  max-width: 600px;
+  margin: 1rem auto;
+}
+
+.review.active {
+  display: block;
+}
+
+.review p {
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
+}
+
+/* ================= GALLERY ================= */
+#gallery {
+  padding: 4rem 3%;
+  background: #f1f1f1;
+  text-align: center;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.gallery-item img, .gallery-item video {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* ================= CONTACT ================= */
+.contact {
+  padding: 4rem 3%;
+  background: #fff;
+  text-align: center;
+}
+
+.contact h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.contact-info p {
+  font-size: 1.1rem;
+  margin-bottom: 0.8rem;
+}
+
+.contact-info a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.contact-info a:hover {
+  text-decoration: underline;
+}
+
+.contact-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin: 2rem 0;
+  flex-wrap: wrap;
+}
+
+.contact-buttons .btn-secondary {
+  padding: 0.8rem 1.5rem;
+  background: #25d366;
+  color: #fff;
+  border-radius: 5px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.contact-buttons .btn-secondary:hover {
+  background: #1ebe5d;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.social-icons a img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  transition: transform 0.3s;
+}
+
+.social-icons a img:hover {
+  transform: scale(1.1);
+}
+
+/* ================= PAYMENTS ================= */
+.payments {
+  padding: 4rem 3%;
+  background: #f8f9fa;
+  text-align: center;
+}
+
+.payments h2 {
+  margin-bottom: 1rem;
+}
+
+.payment-container {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.payment-card {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  width: 280px;
+  text-align: center;
+}
+
+.payment-card h3 {
+  margin: 1rem 0;
+  font-size: 1.2rem;
+}
+
+.payment-card p {
+  font-size: 1rem;
+  margin: 0.3rem 0;
+}
+
+.payment-card button {
+  margin-top: 0.5rem;
+  padding: 0.6rem 1rem;
+  border: none;
+  border-radius: 5px;
+  background: #007bff;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.payment-card button:hover {
+  background: #0056b3;
+}
+
+.whatsapp-btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.8rem 1.8rem;
+  background: #25d366;
+  color: #fff;
+  border-radius: 5px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.whatsapp-btn:hover {
+  background: #1ebe5d;
+}
+
+.pay-note {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+/* ================= FOOTER ================= */
+footer {
+  padding: 1.5rem 3%;
+  background: #222;
+  color: #fff;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+/* ================= CHATBOT ================= */
+#chatbot-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 300px;
+  max-width: 90%;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  overflow: hidden;
+  display: none;
+  flex-direction: column;
+  z-index: 10000;
+}
+
+#chatbot-header {
+  background: #007bff;
+  color: #fff;
+  padding: 0.8rem 1rem;
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+#chatbot-messages {
+  padding: 0.5rem;
+  max-height: 250px;
+  overflow-y: auto;
+}
+
+.bot-message, .user-message {
+  background: #f1f1f1;
+  padding: 0.5rem;
+  border-radius: 5px;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.user-message {
+  background: #007bff;
+  color: #fff;
+  align-self: flex-end;
+}
+
+#chatbot-input-area {
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.5rem;
+}
+
+#chatbot-input-area input {
+  flex: 1;
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+#chatbot-input-area button {
+  padding: 0.5rem 0.8rem;
+  background: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#chatbot-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  padding: 0.5rem;
+}
+
+#chatbot-options button {
+  flex: 1 1 45%;
+  padding: 0.4rem;
+  border: none;
+  border-radius: 5px;
+  background: #f1f1f1;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+#chatbot-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #007bff;
+  color: #fff;
+  padding: 0.7rem 1rem;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.5rem;
+  z-index: 10001;
+}
+
 /* ================= MEDIA QUERIES ================= */
-@media (max-width: 992px) {
+@media(max-width: 992px) {
   .service-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -358,13 +642,18 @@ header nav a:hover {
   }
 }
 
-@media (max-width: 768px) {
+@media(max-width: 768px) {
   .service-grid {
     grid-template-columns: 1fr;
   }
 
-  .social-icons {
-    gap: 12px;
+  .social-icons, .contact-buttons, .payment-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .payment-card {
+    width: 90%;
   }
 
   .hero-content h1 {
@@ -380,4 +669,3 @@ header nav a:hover {
     font-size: 1.5rem;
   }
 }
-
